@@ -7,13 +7,30 @@ classoption:
 
 title: "Hey hey you you I don't like your ti-tle: An empirical study"
 
+# author:
+#     - name: Christop
+#       affiliation: University of Butts
+#       location: Buttville, USA
+#       email: cscorley@ua.edu
+#     - name: Bubbie, Pigpen
+#       affiliation: Cat Institute
+#       email: \{cat1, cat2\}\@cat.cat
 author:
     - name: Christop
-      affiliation: University of Butts
+      email: cscorley@ua.edu
+      affiliation: 1
+    - name: ', Bubbie'
+      affiliation: 2
+    - name: '\ and Pigpen'
+      affiliation: 2
+affiliation:
+    - key: 1
+      name: University of Butts
       location: Buttville, USA
       email: cscorley@ua.edu
-    - name: Bubbie, Pigpen
-      affiliation: Cat Institute
+    - key: 2
+      name: Cat Institute
+      location: CatLand, USA
       email: \{cat1, cat2\}\@cat.cat
 
 keyword:
@@ -28,5 +45,3 @@ abstract: |
 
 # don't delete this line, bud
 ...
-
-

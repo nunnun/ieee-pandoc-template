@@ -155,17 +155,52 @@ $if(title)$
 $endif$
 
 $if(author)$
-\author{
+  $if(affiliation)$
+    % for over three affiliations, or if they all won't fit within the width
+    % of the page, use this alternative format. Cannot use \and or alignment is wrong
+    \author{\IEEEauthorblockN{%
+    $for(author)$
+      $author.name$
+      $for(author.affiliation)$
+        \IEEEauthorrefmark{$author.affiliation$}$sep$
+      $endfor$%
+    $endfor$
+    }
+    $for(affiliation)$
+    \IEEEauthorblockA{\IEEEauthorrefmark{$affiliation.key$}
+      $for(affiliation.name)$
+        $affiliation.name$$sep$\\
+      $endfor$
+      $if(affiliation.email)$
+        $affiliation.email$
+      $endif$
+      }
+    $endfor$}
+  $else$
+    % author names and affiliations
+    % use a multiple column layout for up to three different
+    % affiliations
+    \author{
     $for(author)$
         \IEEEauthorblockN{$author.name$}
         \IEEEauthorblockA{%
             $author.affiliation$ \\
-            $author.location$ \\
-            $author.email$}
+            $if(author.location)$
+              $author.location$ \\
+            $endif$
+            $if(author.telephone)$
+              $author.telephone$ \\
+            $endif$
+            $if(author.email)$
+              $author.email$
+            $endif$
+            }
         $sep$ \and
     $endfor$
-}
+    }
+  $endif$
 $endif$
+
 
 \date{$date$}
 
