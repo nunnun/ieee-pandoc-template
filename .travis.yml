@@ -29,7 +29,7 @@ addons:
 install:
 - export PATH=$PATH:~/.cabal/bin
 - cabal update
-- cabal install cabal cabal-install
+- cabal install --user cabal cabal-install
 - cabal install --user pandoc pandoc-crossref
 
 script:
