@@ -27,7 +27,7 @@ $(PAPER).tex: $(DEP_FILES)
 	pandoc \
 		--standalone \
 		--natbib \
-		--smart \
+		-f markdown+smart \
 		--listings \
 		--template=./template.latex \
 		-H custom.latex \
