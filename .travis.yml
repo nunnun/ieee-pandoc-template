@@ -1,6 +1,6 @@
 os:
 - linux
-dist: xenial
+dist: trusty
 language: generic
 sudo: false
 cache:
@@ -29,6 +29,7 @@ addons:
 install:
 - export PATH=$PATH:~/.cabal/bin
 - cabal update
+- cabal install cabal cabal-install
 - cabal install --user pandoc pandoc-crossref
 
 script:
