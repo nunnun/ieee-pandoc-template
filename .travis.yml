@@ -29,8 +29,8 @@ addons:
 install:
 - export PATH=$PATH:~/.cabal/bin
 - cabal update
-- cabal install --user cabal-install
-- cabal install --user pandoc pandoc-crossref
+# - cabal install --user cabal-install
+- cabal install --user pandoc pandoc-crossref --upgrade-dependencies --force-reinstalls
 
 script:
 - make clean all
