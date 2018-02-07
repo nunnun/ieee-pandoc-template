@@ -12,6 +12,7 @@ addons:
   apt:
     sources:
       - sourceline: 'ppa:jonathonf/texlive-2016'
+      - sourceline: 'ppa:hvr/ghc'
     packages:
     - texlive
     - texlive-lang-cjk
@@ -23,16 +24,12 @@ addons:
     - texlive-fonts-extra
     - ruby-dev
     - build-essential
-    - cabal-install
-    - ghc
+    - cabal-install-2.0
 
 install:
-- export PATH=$PATH:~/.cabal/bin
+- export PATH=$PATH:~/.cabal/bin:/opt/ghc/bin
 - cabal update
-# - cabal install cabal-install
-# - hash -r
-- cabal install --dry-run --user pandoc pandoc-crossref --constraint 'cabal-install < 1.18'
-- cabal install --user pandoc pandoc-crossref --constraint 'cabal-install < 1.18'
+- cabal install -j2 --user pandoc pandoc-crossref
 
 script:
 - make clean all
