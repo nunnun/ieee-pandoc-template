@@ -25,6 +25,7 @@ addons:
     - ruby-dev
     - build-essential
     - cabal-install-2.0
+    - ghc-8.2.2
 
 install:
 - export PATH=$PATH:~/.cabal/bin:/opt/ghc/bin
