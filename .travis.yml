@@ -15,13 +15,8 @@ addons:
       - sourceline: 'ppa:hvr/ghc'
     packages:
     - texlive
-    - texlive-lang-cjk
-    - texlive-lang-japanese
-    - dvipsk-ja
-    - xdvik-ja
     - gv
     - texlive-fonts-recommended
-    - texlive-fonts-extra
     - ruby-dev
     - build-essential
     - cabal-install-2.0
