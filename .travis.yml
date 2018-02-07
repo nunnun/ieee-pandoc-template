@@ -17,7 +17,6 @@ addons:
     - texlive
     - gv
     - texlive-fonts-recommended
-    - ruby-dev
     - build-essential
     - cabal-install-2.0
     - ghc-8.2.2
@@ -31,5 +30,4 @@ script:
 - make clean all
 
 before_cache:
-  - cabal list --installed --simple-output
   - rm -f $HOME/.cabal/logs/*.log
