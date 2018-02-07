@@ -24,7 +24,7 @@ addons:
 install:
 - export PATH=$PATH:~/.cabal/bin:/opt/ghc/bin
 - cabal update
-- cabal install -j2 --user pandoc pandoc-crossref
+- cabal install --user pandoc pandoc-crossref
 
 script:
 - make clean all
